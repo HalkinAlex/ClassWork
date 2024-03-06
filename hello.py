@@ -1,19 +1,11 @@
-word = ""
-seen_characters = set()
+def min_n_variables(elements):
+    min_v = elements [1]
+    for x in elements:
+        if x < min_v:
+            min_v = x
+            return min_v
 
-while True:
-    char = input("Введіть символ (для завершення введіть 'exit'): ")
+# elements = [6***6, 7**5, 5**7]
+elements = [5,1,9,0,7]
 
-    if char == 'exit':
-        break
-
-    if char in seen_characters:
-        print(f"no sequential duplicates allowed, you’ve entered: {word}")
-        break
-
-    word += char
-    seen_characters.add(char)
-
-    if word == word[::-1]:
-        print(f"it’s palindrome: {word}")
-        break
+assert min_n_variables (elements) == 1
