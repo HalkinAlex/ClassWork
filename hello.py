@@ -1,11 +1,10 @@
-def min_n_variables(elements):
-    min_v = elements [1]
-    for x in elements:
-        if x < min_v:
-            min_v = x
-            return min_v
+def second_min(elements):
+    sorted_elements = sorted(set(elements))  # Видаляємо дублікати і сортуємо список
+    if len(sorted_elements) < 2:
+        raise ValueError("List must contain at least two unique elements")
+    return sorted_elements[1]
 
-# elements = [6***6, 7**5, 5**7]
+# elements = [5, 1, 9, 0, 7]
 elements = [5,1,9,0,7]
 
-assert min_n_variables (elements) == 1
+assert second_min(elements) == 1
