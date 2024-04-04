@@ -1,23 +1,43 @@
-class DogRex:
-    def __init__(self):
-        self.name = 'chihuahua'
-        self.voice = 'meow'
-        self.hungry = True
-    
-    def feed(self):
-        self.hungry = False
-    
-    def walk(self):
-        self.hungry = True
+class Dog:
+    def __init__(self, name, voice, age):
+        self.name = name
+        self.voice = voice
+        self.age = age
 
-my_dog = DogRex()
+    def sit(self):
+        print(f"{self.name} is sitting.")
 
-print('my dog name:', my_dog.name) # chihuahua
-print('my dog voice:', my_dog.voice) # meow
-print('my dog is hungry:', my_dog.hungry) # True
+    def stay(self):
+        if self.age >= 1:
+            print(f"{self.name} is staying.")
+        else:
+            print(f"{self.name} is too young to stay.")
 
-my_dog.feed()
-print('my dog is hungry:', my_dog.hungry) # False
+    def come(self):
+        if self.age >= 1:
+            print(f"{self.name} is coming.")
+        else:
+            print(f"{self.name} is too young to come.")
 
-my_dog.walk()
-print('my dog is hungry:', my_dog.hungry) # True
+
+class DogRex(Dog):
+    def __init__(self, name="Rex", voice="bow-wow", age=0):
+        super().__init__(name, voice, age)
+
+    def learn_tricks(self):
+        tricks = [
+            ("Sit", 0),
+            ("Stay", 1),
+            ("Come", 1)
+        ]
+        for trick, min_age in tricks:
+            if self.age >= min_age:
+                print(f"{self.name} learned {trick.lower()}.")
+
+my_dog = DogRex(age=2)
+
+my_dog.learn_tricks()
+
+my_dog.sit()
+my_dog.stay()
+my_dog.come()
