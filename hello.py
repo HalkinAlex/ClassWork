@@ -1,10 +1,23 @@
-def second_min(elements):
-    sorted_elements = sorted(set(elements))  # Видаляємо дублікати і сортуємо список
-    if len(sorted_elements) < 2:
-        raise ValueError("List must contain at least two unique elements")
-    return sorted_elements[1]
+class DogRex:
+    def __init__(self):
+        self.name = 'chihuahua'
+        self.voice = 'meow'
+        self.hungry = True
+    
+    def feed(self):
+        self.hungry = False
+    
+    def walk(self):
+        self.hungry = True
 
-# elements = [5, 1, 9, 0, 7]
-elements = [5,1,9,0,7]
+my_dog = DogRex()
 
-assert second_min(elements) == 1
+print('my dog name:', my_dog.name) # chihuahua
+print('my dog voice:', my_dog.voice) # meow
+print('my dog is hungry:', my_dog.hungry) # True
+
+my_dog.feed()
+print('my dog is hungry:', my_dog.hungry) # False
+
+my_dog.walk()
+print('my dog is hungry:', my_dog.hungry) # True
