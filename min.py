@@ -1,8 +1,10 @@
-a = 512 * 8
-b = 2 * 2 ** 10
+a = 2
+b = 4
+c = 6
 
-if a > b:
-    print("1) min of a and a =", b)
-else:
-    print("2) min of a and a", b)
-
+if a < b and a < c:
+    print("a min")
+if b < a and b < c:
+    print("b min")
+if c < b and c < a:
+    print("c min")

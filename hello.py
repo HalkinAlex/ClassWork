@@ -1,8 +1,9 @@
-#include <iostream>
+word = 'Halkin'
+new_word = ''
+for a in word:
+    new_word = a + new_word
 
-using namespace std;
-
-int main() {
-    cout << "Hello World!";
-    return 0;
-}
+if new_word == word:
+    print('palindrome')
+else:
+    print(f'word = {word} is not palindrome')
